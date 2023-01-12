@@ -17,15 +17,46 @@
           <div class="temp"></div>
           <div class="img"></div>
           <form>
-            <label for="location">Search location</label>
-            <input id="location" type="text" />
-            <button type="button" id="submit">submit</button>
+            <div class="container-search">
+              <input
+                id="location"
+                type="text"
+                placeholder="search location..."
+                autocomplete="off"
+              />
+              <button type="button" id="submit">
+                <img class="search-icon" src="styles/icons/search.svg" />
+              </button>
+            </div>
           </form>
         </div>
         <div class="wrapper">
-          <div class="feels-temp">d</div>
-          <div class="humidity"></div>
-          <div class="wind-speed"></div>
+          <div class="wrapper-feels-temp">
+            <div class="wrapper-temp-img">
+              <img class="temp-icon" src="styles/icons/temp.svg" alt="temp" />
+            </div>
+            <div class="feels-temp">
+              Feels like: <span id="feels-temp"></span>
+            </div>
+          </div>
+          <div class="wrapper-humidity">
+            <div class="wrapper-humidity-img">
+              <img
+                class="humidity-icon"
+                src="styles/icons/water-drop.svg"
+                alt="water drop"
+              />
+            </div>
+            <div class="humidity">Humidity: <span id="humidity"></span></div>
+          </div>
+          <div class="wrapper-wind-speed">
+            <div class="wrapper-wind-img">
+              <img class="wind-icon" src="styles/icons/wind.svg" alt="wind" />
+            </div>
+            <div class="wind-speed">
+              Wind speed: <span id="wind-speed"></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
