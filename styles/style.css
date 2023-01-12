@@ -1,19 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
 
+:root {
+  --white-color: rgb(255, 255, 255);
+}
+
 body {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   min-height: 100vh;
+  background: url(images/weather.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 #wrapper {
+  display: flex;
+  justify-content: center;
   min-height: 100vh;
 }
 
 .container {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  width: 95%;
+  max-width: 1900px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 25px;
+  color: var(--white-color);
+}
+
+.weather {
+  font-size: 2rem;
+}
+
+.location {
+  font-size: 1.2rem;
+}
+
+.temp {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  border: 0px;
+  color: var(--white-color);
+  background: transparent;
+}
+
+input::placeholder {
+  color: var(--white-color);
+}
+
+.search-icon {
+  width: inherit;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+#submit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+}
+
+.container-search {
+  display: flex;
+  box-shadow: 0px 2px var(--white-color);
+}
+
+.weather {
+  font-weight: bold;
+}
+
+.feels-temp,
+.humidity,
+.wind-speed {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.1rem;
+}
+
+#feels-temp,
+#humidity,
+#wind-speed {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.wrapper-feels-temp,
+.wrapper-humidity,
+.wrapper-wind-speed {
+  display: flex;
+}
+
+.temp-icon,
+.humidity-icon,
+.wind-icon {
+  width: 40px;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
