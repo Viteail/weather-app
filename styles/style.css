@@ -129,6 +129,13 @@ input:focus {
   width: 40px;
 }
 
+@media only screen and (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
 @keyframes fadein {
   from {
     opacity: 0;
