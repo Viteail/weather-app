@@ -18,6 +18,8 @@ const getWeather = async (location) => {
     const feelsTemp = document.querySelector('#feels-temp');
     const humidity = document.querySelector('#humidity');
     const windSpeed = document.querySelector('#wind-speed');
+    const error = document.querySelector('.container-error');
+    error.textContent = '';
 
     const forecast = {
       temp: Math.floor(data.main.temp - 273.15),
@@ -39,7 +41,11 @@ const getWeather = async (location) => {
     windSpeed.textContent = `${forecast.wind_speed}m/s`;
     console.log(data);
   } catch (err) {
-    alert('location not found');
+    const wrapper = document.querySelector('#wrapper');
+    wrapper.style.animation = '';
+
+    const error = document.querySelector('.container-error');
+    error.textContent = 'Location not found.';
   }
 };
 
@@ -54,11 +60,8 @@ const submitLocation = () => {
   });
 };
 
-const capitalizeFirstLetter = (string) => {
-  const capitalized = string.charAt(0).toUpperCase() + string.slice(1);
-
-  return capitalized;
-};
+const capitalizeFirstLetter = (string) =>
+  string.charAt(0).toUpperCase() + string.slice(1);
 
 getWeather('Moldova');
 
