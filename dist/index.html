@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>weather-app</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="container">
+        <div class="wrapper">
+          <div class="weather"></div>
+          <div class="location"></div>
+          <div class="date"></div>
+          <div class="temp"></div>
+          <form>
+            <div class="container-search">
+              <div class="container-input">
+                <input
+                  id="location"
+                  type="text"
+                  placeholder="search location..."
+                  autocomplete="off"
+                />
+                <button type="button" id="submit">
+                  <img class="search-icon" src="styles/icons/search.svg" />
+                </button>
+              </div>
+              <div class="container-error"></div>
+            </div>
+          </form>
+          <div class="container-weather-img">
+            <img id="weather-img" />
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="wrapper-feels-temp">
+            <div class="wrapper-temp-img">
+              <img class="temp-icon" src="styles/icons/temp.svg" alt="temp" />
+            </div>
+            <div class="feels-temp">
+              Feels like: <span id="feels-temp"></span>
+            </div>
+          </div>
+          <div class="wrapper-humidity">
+            <div class="wrapper-humidity-img">
+              <img
+                class="humidity-icon"
+                src="styles/icons/water-drop.svg"
+                alt="water drop"
+              />
+            </div>
+            <div class="humidity">Humidity: <span id="humidity"></span></div>
+          </div>
+          <div class="wrapper-wind-speed">
+            <div class="wrapper-wind-img">
+              <img class="wind-icon" src="styles/icons/wind.svg" alt="wind" />
+            </div>
+            <div class="wind-speed">
+              Wind speed: <span id="wind-speed"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
