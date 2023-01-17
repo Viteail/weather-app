@@ -14,7 +14,7 @@ const getWeather = async (location) => {
     const name = document.querySelector('.location');
     const date = document.querySelector('.date');
     const temp = document.querySelector('.temp');
-    const weatherImg = document.querySelector('.img');
+    const weatherImg = document.querySelector('#weather-img');
     const feelsTemp = document.querySelector('#feels-temp');
     const humidity = document.querySelector('#humidity');
     const windSpeed = document.querySelector('#wind-speed');
@@ -28,6 +28,7 @@ const getWeather = async (location) => {
       weather: data.weather[0].description,
       name: data.name,
       wind_speed: data.wind.speed,
+      img: data.weather[0].icon,
     };
 
     const weatherDescription = capitalizeFirstLetter(forecast.weather);
@@ -39,7 +40,9 @@ const getWeather = async (location) => {
     feelsTemp.textContent = `${forecast.feels_like}°C`;
     humidity.textContent = `${forecast.humidity}%`;
     windSpeed.textContent = `${forecast.wind_speed}m/s`;
-    console.log(data);
+    weatherImg.src =
+      'http://openweathermap.org/img/wn/' + `${forecast.img}` + '@2x.png';
+      
   } catch (err) {
     const wrapper = document.querySelector('#wrapper');
     wrapper.style.animation = '';
